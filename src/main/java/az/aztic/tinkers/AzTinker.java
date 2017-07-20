@@ -1,6 +1,6 @@
-package az.AzTiC.tinkers;
+package az.aztic.tinkers;
 
-import az.AzTiC.AzTiC;
+import az.aztic.AzTiC;
 import com.google.common.collect.Lists;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
@@ -28,7 +28,7 @@ public class AzTinker {
 //    static List<IModifier> modifiers = Lists.newLinkedList();
 //    static List<Pair<Item, ToolPart>> toolPartPatterns = Lists.newLinkedList();
 
-//    public static ToolCore cutlass; //I am dumb
+//    public static ToolCore assets.aztic.textures.items.cutlass; //I am dumb
     public static Cutlass cutlass;
     public static ToolPart fullGuard;
 
@@ -36,7 +36,7 @@ public class AzTinker {
     }
 
 
-    public static void init(FMLInitializationEvent event){
+    public static void pseudoInit(){
         // 1.11 method
 
         fullGuard = new ToolPart(Material.VALUE_Ingot * 3);
@@ -53,13 +53,20 @@ public class AzTinker {
         cutlass.setRegistryName("cutlass");
         GameRegistry.register(cutlass);
         TinkerRegistry.registerToolForgeCrafting(cutlass);
-        //Register model
+//        if (aztic.proxy instanceof ClientProxy){
+////            ModelRegisterUtil.registerToolModel(tool);
+////            ((ClientProxy) aztic.proxy).registerModel(assets.aztic.textures.items.cutlass);
+//        }
+        AzTiC.proxy.registerModel(cutlass);
         tools.add(cutlass);
     }
 
+    public static void init(FMLInitializationEvent event){
 
+    }
     public static void postInit(FMLPostInitializationEvent event){
     }
+
 
     @SubscribeEvent
     public static void magnetar(RegistryEvent.Register<Item> e){ //This is how it has to be done in 1.12, so I'm keeping it for when I update
@@ -71,12 +78,12 @@ public class AzTinker {
 //        //Register model
 //        toolparts.add(fullGuard);
 
-//        cutlass = new Cutlass();
-//        cutlass.setUnlocalizedName("cutlass");
-//        cutlass.setRegistryName("cutlass");
-//        e.getRegistry().register(cutlass);
-//        TinkerRegistry.registerToolForgeCrafting(cutlass);
-//        tools.add(cutlass);
+//        assets.aztic.textures.items.cutlass = new Cutlass();
+//        assets.aztic.textures.items.cutlass.setUnlocalizedName("assets.aztic.textures.items.cutlass");
+//        assets.aztic.textures.items.cutlass.setRegistryName("assets.aztic.textures.items.cutlass");
+//        e.getRegistry().register(assets.aztic.textures.items.cutlass);
+//        TinkerRegistry.registerToolForgeCrafting(assets.aztic.textures.items.cutlass);
+//        tools.add(assets.aztic.textures.items.cutlass);
 //        Register model
 
 //        for (final ToolPart p : toolparts){

@@ -1,0 +1,8 @@
+{
+  "textures": {
+    "layer0": "aztic:items/cutlass/handle",
+    "layer1": "aztic:items/cutlass/blade",
+    "layer2": "aztic:items/cutlass/guard",
+    "broken1": "aztic:items/cutlass/broken_blade"
+  }
+}

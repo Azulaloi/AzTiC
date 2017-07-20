@@ -1,10 +1,8 @@
-package az.AzTiC.tinkers;
+package az.aztic.tinkers;
 
-import net.minecraftforge.common.MinecraftForge;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.tinkering.Category;
 import slimeknights.tconstruct.library.tinkering.PartMaterialType;
-import slimeknights.tconstruct.library.tools.IToolPart;
 import slimeknights.tconstruct.library.tools.SwordCore;
 import slimeknights.tconstruct.library.tools.ToolNBT;
 import slimeknights.tconstruct.tools.TinkerTools;
@@ -31,8 +29,8 @@ public class Cutlass extends SwordCore {
 
 //        addCategory(Category.WEAPON);
         this.addCategory(Category.WEAPON);
-//        setUnlocalizedName("cutlass");
-//        setRegistryName("cutlass");
+//        setUnlocalizedName("assets.aztic.textures.items.cutlass");
+//        setRegistryName("assets.aztic.textures.items.cutlass");
     }
 
     @Override
