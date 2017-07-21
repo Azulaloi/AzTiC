@@ -20,11 +20,16 @@ public class AzTinker {
 
     @SubscribeEvent
     public static void initialize(RegistryEvent.Register<Item> event){
-        cutlass = new Cutlass();
-        cutlass.setUnlocalizedName("cutlass");
-        cutlass.setRegistryName("cutlass");
-        event.getRegistry().register(cutlass);
-        proxy.registerModel(cutlass); //I'm not sure what order this should be in.
-        TinkerRegistry.registerTool(cutlass);
+        /* TOOLS */
+
+        //I'm not sure what order this should be in.
+        cutlass = new Cutlass();                        //Instantiate static
+        cutlass.setUnlocalizedName("cutlass");          //Unlocalized name
+        cutlass.setRegistryName("cutlass");             //Registry name
+        event.getRegistry().register(cutlass);          //Register as an item
+        proxy.registerModel(cutlass);                   //Register item model
+        TinkerRegistry.registerToolForgeCrafting(cutlass);
+
+        /* END TOOLS */
     }
 }
