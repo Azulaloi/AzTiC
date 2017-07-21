@@ -1,7 +1,11 @@
 package az.aztic;
 
+<<<<<<< HEAD
 import az.aztic.tinkers.AzTinker;
 import net.minecraftforge.fml.common.Loader;
+=======
+import az.aztic.proxy.CommonProxy;
+>>>>>>> 30bc503... 1.12
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -11,11 +15,12 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- * Created by Azulaloi on 7/18/2017.
+ * Created by Azulaloi on 7/20/2017
  */
+
 @Mod(modid= AzTiC.MODID, name = AzTiC.MODNAME, version = AzTiC.MODVERSION,
-        dependencies = "required-after:tconstruct@[1.11.2-2.7.0.9,);"
-                + "required-after:mantle@[1.11.2-1.2.0.27,);", useMetadata = false)
+     dependencies = "required-after:tconstruct@[1.12-2.7.1.9,);" +
+                    "required-after:mantle@[1.12-1.3.0.16,);")
 
 public class AzTiC {
     public static final String MODID = "aztic";
@@ -24,41 +29,20 @@ public class AzTiC {
 
     public static final Logger logger = LogManager.getLogger(MODID);
 
-    @SidedProxy(clientSide = "az.aztic.ClientProxy", serverSide = "az.aztic.CommonProxy")
+    @SidedProxy(clientSide = "az.aztic.proxy.ClientProxy",
+                serverSide = "az.aztic.proxy.CommonProxy")
     public static CommonProxy proxy;
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event){
-        if (Loader.isModLoaded("tconstruct")){
-            AzTinker.pseudoInit();
-//            AzTinker.preInit(event);
-        }
-
+		
     }
-
     @Mod.EventHandler
     public void init(FMLInitializationEvent event){
-        if (Loader.isModLoaded("tconstruct")){
-//            AzTinker.pseudoInit();
-            proxy.tinkerGui();
-//            if (proxy instanceof ClientProxy){
-//                ((ClientProxy) proxy).tinkerGui(); //buetifial
-//            }
-//            if (event.getSide() == Side.CLIENT){
-//                ClientProxy.tinkerGui();
-//            }
-//            AzTinker.init(event);
-        }
-    }
 
+    }
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event){
-        if (Loader.isModLoaded("tconstruct")){
-//            aztic.proxy.registerModel(assets.aztic.textures.items.cutlass);
-//            proxy.tinkerGui();
-//            AzTinker.postInit(event);
-        }
+
     }
-
-
 }
