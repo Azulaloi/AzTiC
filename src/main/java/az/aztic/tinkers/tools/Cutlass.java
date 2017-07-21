@@ -1,5 +1,6 @@
 package az.aztic.tinkers.tools;
 
+import az.aztic.tinkers.AzTinker;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.tinkering.Category;
 import slimeknights.tconstruct.library.tinkering.PartMaterialType;
@@ -16,7 +17,8 @@ public class Cutlass extends SwordCore{
     public Cutlass(){
           super(PartMaterialType.handle(TinkerTools.toolRod),
                 PartMaterialType.head(TinkerTools.swordBlade),
-                PartMaterialType.extra(TinkerTools.toughBinding));
+//                PartMaterialType.extra(TinkerTools.toughBinding));
+                PartMaterialType.extra(AzTinker.fullGuard));
 
         this.addCategory(Category.WEAPON);
     }

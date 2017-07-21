@@ -8,6 +8,7 @@ import slimeknights.tconstruct.common.ModelRegisterUtil;
 import slimeknights.tconstruct.library.TinkerRegistryClient;
 import slimeknights.tconstruct.library.client.ToolBuildGuiInfo;
 import slimeknights.tconstruct.library.tools.ToolCore;
+import slimeknights.tconstruct.library.tools.ToolPart;
 
 /**
  * Created by Azulaloi on 7/20/2017
@@ -40,7 +41,12 @@ public class ClientProxy extends CommonProxy {
     }
 
     @Override
-    public void registerModel(ToolCore tool){
+    public void registerToolModel(ToolCore tool){
         ModelRegisterUtil.registerToolModel(tool);
+    }
+
+    @Override
+    public void registerToolPartModel(ToolPart part){
+        ModelRegisterUtil.registerPartModel(part);
     }
 }
