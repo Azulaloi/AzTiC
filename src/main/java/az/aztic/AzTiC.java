@@ -14,7 +14,7 @@ import org.apache.logging.log4j.Logger;
  * Created by Azulaloi on 7/18/2017.
  */
 @Mod(modid= AzTiC.MODID, name = AzTiC.MODNAME, version = AzTiC.MODVERSION,
-        dependencies = "required-after:tconstruct@[1.11.2-2.7.1.505,);"
+        dependencies = "required-after:tconstruct@[1.11.2-2.7.0.9,);"
                 + "required-after:mantle@[1.11.2-1.2.0.27,);", useMetadata = false)
 
 public class AzTiC {
