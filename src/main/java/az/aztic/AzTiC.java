@@ -1,11 +1,6 @@
 package az.aztic;
 
-<<<<<<< HEAD
-import az.aztic.tinkers.AzTinker;
-import net.minecraftforge.fml.common.Loader;
-=======
 import az.aztic.proxy.CommonProxy;
->>>>>>> 30bc503... 1.12
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
