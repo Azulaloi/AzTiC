@@ -2,6 +2,7 @@ package az.aztic.tinkers;
 
 import az.aztic.AzTiC;
 import az.aztic.tinkers.tools.Cutlass;
+import az.aztic.tinkers.tools.Shears;
 import az.aztic.util.AzUtil;
 import com.google.common.collect.Lists;
 import net.minecraft.item.Item;
@@ -34,6 +35,7 @@ public class AzTinker {
     public static ToolPart fullGuard;
 
     public static Cutlass cutlass;
+    public static Shears shears;
 
     @SubscribeEvent
     public static void initialize(RegistryEvent.Register<Item> event){
@@ -59,6 +61,14 @@ public class AzTinker {
         proxy.registerToolModel(cutlass);                       //Register item model
         TinkerRegistry.registerToolForgeCrafting(cutlass);  //Register crafting entry (Needs GUI definition in ClientProxy)
         tools.add(cutlass);
+
+        shears = new Shears();
+        shears.setUnlocalizedName(unlocalizedWithID("shears"));
+        shears.setRegistryName("shears");
+        event.getRegistry().register(shears);
+        proxy.registerToolModel(shears);
+        TinkerRegistry.registerToolStationCrafting(shears);
+        tools.add(shears);
 
         /* END TOOLS */
 
