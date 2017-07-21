@@ -32,10 +32,12 @@ public class AzTiC {
     public void preInit(FMLPreInitializationEvent event){
 		proxy.preInit(event); //Consider subscribing directly
     }
+
     @Mod.EventHandler
     public void init(FMLInitializationEvent event){
         proxy.init(event);
     }
+
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event){
         proxy.postInit(event);
