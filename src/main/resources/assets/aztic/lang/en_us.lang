@@ -1,3 +1,4 @@
-item.assets.aztic.textures.items.cutlass.name=Cutlass
+item.aztic.cutlass.name=Cutlass
+item.aztic.cutlass.desc=Cutlass description line 1.\nCutlass description line 2.
 
 entity.blueslime.name=Blue Slime
