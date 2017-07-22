@@ -1,5 +1,6 @@
 package az.aztic.proxy;
 
+import az.aztic.Config;
 import az.aztic.tinkers.AzTinker;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -31,13 +32,13 @@ public class ClientProxy extends CommonProxy {
     }
 
     public void toolBuildGui(){
-        //Cutlass
-        ToolBuildGuiInfo cutlassInfo = new ToolBuildGuiInfo(AzTinker.cutlass);
-        cutlassInfo.addSlotPosition(33 - 20, 42 + 20);
-        cutlassInfo.addSlotPosition(33 + 20, 42 - 20);
-        cutlassInfo.addSlotPosition(33, 42);
-        TinkerRegistryClient.addToolBuilding(cutlassInfo);
-        //End Cutlass
+        if (Config.loadCutlass) {
+            ToolBuildGuiInfo cutlassInfo = new ToolBuildGuiInfo(AzTinker.cutlass);
+            cutlassInfo.addSlotPosition(33 - 20, 42 + 20);
+            cutlassInfo.addSlotPosition(33 + 20, 42 - 20);
+            cutlassInfo.addSlotPosition(33, 42);
+            TinkerRegistryClient.addToolBuilding(cutlassInfo);
+        }
     }
 
     @Override

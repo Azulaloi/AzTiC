@@ -1,6 +1,7 @@
 package az.aztic.tinkers;
 
 import az.aztic.AzTiC;
+import az.aztic.Config;
 import az.aztic.tinkers.tools.Cutlass;
 import az.aztic.tinkers.tools.Shears;
 import az.aztic.util.AzUtil;
@@ -41,34 +42,40 @@ public class AzTinker {
     public static void initialize(RegistryEvent.Register<Item> event){
         /* PARTS */
 
-        fullGuard = new ToolPart(Material.VALUE_Ingot * 3);
-        fullGuard.setUnlocalizedName(unlocalizedWithID("fullguard"));
-        fullGuard.setRegistryName("fullguard");
-        event.getRegistry().register(fullGuard);
-        TinkerRegistry.registerToolPart(fullGuard);
-        proxy.registerToolPartModel(fullGuard);
-        toolparts.add(fullGuard);
+        if (Config.loadCutlass) {
+            fullGuard = new ToolPart(Material.VALUE_Ingot * 3);
+            fullGuard.setUnlocalizedName(unlocalizedWithID("fullguard"));
+            fullGuard.setRegistryName("fullguard");
+            event.getRegistry().register(fullGuard);
+            TinkerRegistry.registerToolPart(fullGuard);
+            proxy.registerToolPartModel(fullGuard);
+            toolparts.add(fullGuard);
+        }
 
         /* END PARTS */
 
         /* TOOLS */
 
         //I'm not sure what order this should be in.
-        cutlass = new Cutlass();                            //Instantiate static
-        cutlass.setUnlocalizedName(unlocalizedWithID("cutlass"));              //Unlocalized name
-        cutlass.setRegistryName("cutlass");                 //Registry name
-        event.getRegistry().register(cutlass);              //Register as an item
-        proxy.registerToolModel(cutlass);                       //Register item model
-        TinkerRegistry.registerToolForgeCrafting(cutlass);  //Register crafting entry (Needs GUI definition in ClientProxy)
-        tools.add(cutlass);
+        if (Config.loadCutlass) {
+            cutlass = new Cutlass();                            //Instantiate static
+            cutlass.setUnlocalizedName(unlocalizedWithID("cutlass"));              //Unlocalized name
+            cutlass.setRegistryName("cutlass");                 //Registry name
+            event.getRegistry().register(cutlass);              //Register as an item
+            proxy.registerToolModel(cutlass);                       //Register item model
+            TinkerRegistry.registerToolForgeCrafting(cutlass);  //Register crafting entry (Needs GUI definition in ClientProxy)
+            tools.add(cutlass);
+        }
 
-        shears = new Shears();
-        shears.setUnlocalizedName(unlocalizedWithID("shears"));
-        shears.setRegistryName("shears");
-        event.getRegistry().register(shears);
-        proxy.registerToolModel(shears);
-        TinkerRegistry.registerToolStationCrafting(shears);
-        tools.add(shears);
+        if (Config.loadShears) {
+            shears = new Shears();
+            shears.setUnlocalizedName(unlocalizedWithID("shears"));
+            shears.setRegistryName("shears");
+            event.getRegistry().register(shears);
+            proxy.registerToolModel(shears);
+            TinkerRegistry.registerToolStationCrafting(shears);
+            tools.add(shears);
+        }
 
         /* END TOOLS */
 
