@@ -10,8 +10,15 @@ import java.io.File;
  * Created by Azulaloi on 7/21/2017
  */
 public class Config {
+//    static String Version = "0.0";
+//    static boolean isVersion = true;
+
     public static boolean loadCutlass = true;
     public static boolean loadShears = true;
+
+//    public Config(String version){
+//        Version = version;
+//    }
 
     public static void initConfig(){
         Configuration config = CommonProxy.config;
@@ -28,7 +35,11 @@ public class Config {
     }
 
     private static void readConfig(Configuration config){
-        config.addCustomCategoryComment("Tools", "I love you");
+//        if (!(config.get("Version","Identifier", Version).getString().equals(Version))){
+//            //THEN PROBLEMS
+//        }
+
+//        config.addCustomCategoryComment("Tools", "Tools");
         loadCutlass = config.getBoolean("Load Cutlass", "Tools", loadCutlass, "Set to false to disable the Cutlass.");
         loadShears = config.getBoolean("Load Shears", "Tools", loadShears, "Set to false to disable the Shears.");
 

@@ -1,5 +1,6 @@
 package az.aztic.proxy;
 
+import az.aztic.AzTiC;
 import az.aztic.Config;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -20,6 +21,9 @@ public class CommonProxy {
         File directory = event.getSuggestedConfigurationFile();
         config = new Configuration(new File(directory.getPath()));
         Config.initConfig();
+
+//        Config instantConfig = new Config(AzTiC.MODVERSION);
+//        instantConfig.initConfig();
     }
 
     public void init(FMLInitializationEvent event){

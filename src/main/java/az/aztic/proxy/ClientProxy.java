@@ -39,6 +39,14 @@ public class ClientProxy extends CommonProxy {
             cutlassInfo.addSlotPosition(33, 42);
             TinkerRegistryClient.addToolBuilding(cutlassInfo);
         }
+
+        if (Config.loadShears) {
+            ToolBuildGuiInfo shearsInfo = new ToolBuildGuiInfo(AzTinker.shears);
+            shearsInfo.addSlotPosition(33 - 20, 42 + 20);
+            shearsInfo.addSlotPosition(33 + 20, 42 - 20);
+            shearsInfo.addSlotPosition(33, 42);
+            TinkerRegistryClient.addToolBuilding(shearsInfo);
+        }
     }
 
     @Override
