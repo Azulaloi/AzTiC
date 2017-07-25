@@ -1,16 +1,19 @@
 package az.aztic.proxy;
 
+import az.aztic.AzTiC;
 import az.aztic.Config;
 import az.aztic.tinkers.AzTinker;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import slimeknights.tconstruct.common.ModelRegisterUtil;
 import slimeknights.tconstruct.library.TinkerRegistryClient;
 import slimeknights.tconstruct.library.client.ToolBuildGuiInfo;
+import slimeknights.tconstruct.library.modifiers.IModifier;
 import slimeknights.tconstruct.library.tools.ToolCore;
 import slimeknights.tconstruct.library.tools.ToolPart;
-
+import slimeknights.tconstruct.tools.TinkerModifiers;
 /**
  * Created by Azulaloi on 7/20/2017
  */
@@ -57,5 +60,10 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void registerToolPartModel(ToolPart part){
         ModelRegisterUtil.registerPartModel(part);
+    }
+
+    @Override
+    public void registerToolModifierModel(IModifier mod){
+        ModelRegisterUtil.registerModifierModel(mod, new ResourceLocation(AzTiC.MODID, "models/item/modifiers/" + mod.getIdentifier()));
     }
 }

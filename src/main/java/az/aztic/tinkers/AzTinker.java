@@ -17,6 +17,7 @@ import slimeknights.tconstruct.library.tinkering.PartMaterialType;
 import slimeknights.tconstruct.library.tools.Pattern;
 import slimeknights.tconstruct.library.tools.ToolCore;
 import slimeknights.tconstruct.library.tools.ToolPart;
+import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.TinkerTools;
 
 import java.util.List;
@@ -65,6 +66,8 @@ public class AzTinker {
             proxy.registerToolModel(cutlass);                       //Register item model
             TinkerRegistry.registerToolForgeCrafting(cutlass);  //Register crafting entry (Needs GUI definition in ClientProxy)
             tools.add(cutlass);
+
+            proxy.registerToolModifierModel(TinkerModifiers.modNecrotic);
         }
 
         if (Config.loadShears) {

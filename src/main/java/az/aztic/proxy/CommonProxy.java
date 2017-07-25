@@ -2,12 +2,16 @@ package az.aztic.proxy;
 
 import az.aztic.AzTiC;
 import az.aztic.Config;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import slimeknights.tconstruct.common.ModelRegisterUtil;
+import slimeknights.tconstruct.library.modifiers.IModifier;
 import slimeknights.tconstruct.library.tools.ToolCore;
 import slimeknights.tconstruct.library.tools.ToolPart;
+import slimeknights.tconstruct.tools.TinkerModifiers;
 
 import java.io.File;
 
@@ -42,4 +46,7 @@ public class CommonProxy {
     }
 
     public void registerToolPartModel(ToolPart part){}
+
+    public void registerToolModifierModel(IModifier mod){
+    }
 }
