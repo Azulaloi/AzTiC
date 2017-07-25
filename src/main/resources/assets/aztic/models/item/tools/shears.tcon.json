@@ -1,0 +1,9 @@
+{
+  "textures": {
+    "layer0": "aztic:items/shears/handle",
+    "layer1": "aztic:items/shears/top",
+    "layer2": "aztic:items/shears/bottom",
+    "broken1": "aztic:items/shears/broken_top",
+    "broken2": "aztic:items/shears/broken_bottom"
+  }
+}
