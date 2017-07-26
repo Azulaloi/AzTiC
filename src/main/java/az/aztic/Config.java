@@ -49,6 +49,6 @@ public class Config {
 
         if (!loadCutlass && !loadShears) {AzTiC.logger.log(Level.WARN, "All AzTiC content is disabled in the config!");}
 
-        config.getBoolean("Verbose Logging", "Debug", verboseLogging, "Set to true for more log info.");
+        verboseLogging = config.getBoolean("Verbose Logging", "Debug", verboseLogging, "Set to true for more log info.");
     }
 }
