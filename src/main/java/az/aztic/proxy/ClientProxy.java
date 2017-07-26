@@ -5,6 +5,8 @@ import az.aztic.Config;
 import az.aztic.tinkers.AzTinker;
 import az.aztic.util.AzUtil;
 import net.minecraft.block.Block;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fluids.Fluid;
@@ -79,5 +81,14 @@ public class ClientProxy extends CommonProxy {
             AzUtil.FluidMappingMischief mapper = new AzUtil.FluidMappingMischief(fluid);
             ModelLoader.setCustomStateMapper(block, mapper);
         }
+    }
+
+    @Override
+    public void registerItemModel(Item item){
+        ModelLoader.setCustomModelResourceLocation(
+                item,
+                0,
+                new ModelResourceLocation(item.getRegistryName(), "inventory")
+        );
     }
 }

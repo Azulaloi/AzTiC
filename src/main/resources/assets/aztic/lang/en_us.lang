@@ -1,6 +1,13 @@
 item.aztic.cutlass.name=Cutlass
 item.aztic.cutlass.desc=Cutlass description line 1.\nCutlass description line 2.
 
+item.aztic.shears.name=Shears
+item.aztic.shears.desc=Jointed paring blades! Excellent for shearing woolly animals, or delicate plant harvesting.
+
 item.aztic.fullguard.name=Full Guard
+
+fluid.aztic.molten_azulalloy.name=Molten Azul Alloy
+item.aztic.azulalloyingot.name=Azul Alloy Ingot
+material.azulalloy.name=Azul Alloy
 
 entity.blueslime.name=Blue Slime

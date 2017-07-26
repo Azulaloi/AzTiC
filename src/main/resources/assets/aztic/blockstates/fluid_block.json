@@ -4,8 +4,8 @@
         "model": "forge:fluid"
     },
     "variants": {
-        "azfluid": [{
-            "custom": { "fluid": "azfluid" }
+        "molten_azulalloy": [{
+            "custom": { "fluid": "molten_azulalloy" }
         }]
     }
 }

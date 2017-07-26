@@ -3,7 +3,10 @@ package az.aztic.proxy;
 import az.aztic.AzTiC;
 import az.aztic.Config;
 import az.aztic.tinkers.mats.AzMats;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -54,4 +57,7 @@ public class CommonProxy {
     public void registerToolModifierModel(IModifier mod){}
 
     public void initFluidModel(Fluid fluid){}
+
+    public void registerItemModel(Item item){}
+
 }
