@@ -1,6 +1,7 @@
 package az.aztic;
 
 import az.aztic.proxy.CommonProxy;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -27,6 +28,10 @@ public class AzTiC {
     @SidedProxy(clientSide = "az.aztic.proxy.ClientProxy",
                 serverSide = "az.aztic.proxy.CommonProxy")
     public static CommonProxy proxy;
+
+    static {
+        FluidRegistry.enableUniversalBucket();
+    }
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event){

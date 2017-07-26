@@ -3,7 +3,11 @@ package az.aztic.proxy;
 import az.aztic.AzTiC;
 import az.aztic.Config;
 import az.aztic.tinkers.AzTinker;
+import az.aztic.util.AzUtil;
+import net.minecraft.block.Block;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -13,6 +17,7 @@ import slimeknights.tconstruct.library.client.ToolBuildGuiInfo;
 import slimeknights.tconstruct.library.modifiers.IModifier;
 import slimeknights.tconstruct.library.tools.ToolCore;
 import slimeknights.tconstruct.library.tools.ToolPart;
+import slimeknights.tconstruct.shared.FluidsClientProxy;
 import slimeknights.tconstruct.tools.TinkerModifiers;
 /**
  * Created by Azulaloi on 7/20/2017
@@ -65,5 +70,14 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void registerToolModifierModel(IModifier mod){
         ModelRegisterUtil.registerModifierModel(mod, new ResourceLocation(AzTiC.MODID, "models/item/modifiers/" + mod.getIdentifier()));
+    }
+
+    @Override
+    public void initFluidModel(Fluid fluid){
+        Block block = fluid.getBlock();
+        if (block != null) {
+            AzUtil.FluidMappingMischief mapper = new AzUtil.FluidMappingMischief(fluid);
+            ModelLoader.setCustomStateMapper(block, mapper);
+        }
     }
 }

@@ -2,6 +2,7 @@ package az.aztic.tinkers;
 
 import az.aztic.AzTiC;
 import az.aztic.Config;
+import az.aztic.tinkers.mats.AzMats;
 import az.aztic.tinkers.tools.Cutlass;
 import az.aztic.tinkers.tools.Shears;
 import az.aztic.util.AzUtil;
@@ -77,7 +78,6 @@ public class AzTinker {
             proxy.registerToolModifierModel(TinkerModifiers.modGlowing);
             proxy.registerToolModifierModel(TinkerModifiers.modMendingMoss);
             proxy.registerToolModifierModel(TinkerModifiers.modShulking);
-            proxy.registerToolModifierModel(TinkerModifiers.modSilktouch);
             proxy.registerToolModifierModel(TinkerModifiers.modSoulbound);
             proxy.registerToolModifierModel(TinkerModifiers.modWebbed);
             proxy.registerToolModifierModel(TinkerModifiers.modSharpness);

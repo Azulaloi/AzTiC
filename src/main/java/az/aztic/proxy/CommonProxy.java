@@ -2,8 +2,10 @@ package az.aztic.proxy;
 
 import az.aztic.AzTiC;
 import az.aztic.Config;
+import az.aztic.tinkers.mats.AzMats;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -28,6 +30,8 @@ public class CommonProxy {
 
 //        Config instantConfig = new Config(AzTiC.MODVERSION);
 //        instantConfig.initConfig();
+
+        AzMats.preInit();
     }
 
     public void init(FMLInitializationEvent event){
@@ -47,6 +51,7 @@ public class CommonProxy {
 
     public void registerToolPartModel(ToolPart part){}
 
-    public void registerToolModifierModel(IModifier mod){
-    }
+    public void registerToolModifierModel(IModifier mod){}
+
+    public void initFluidModel(Fluid fluid){}
 }
